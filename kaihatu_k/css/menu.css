@@ -1,0 +1,75 @@
+/* Reset default margins and paddings */
+body, h1, header {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Menu styles */
+.menu {
+    display: flex;
+    align-items: stretch;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.sentaku {
+    margin: 0 20px;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.left-menu {
+    padding: 10px;
+    border-right: 1px solid #aaaaaa;
+}
+
+.category-name {
+    font-size: 28px;
+    margin: 10px;
+    padding: 5px;
+    color: #55aaff;
+}
+
+.category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.category li {
+    margin: 5px;
+}
+
+.shohin-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.img {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.btn2 {
+    text-decoration: none;
+    color: #55aaff;
+}
+
+.main-menu {
+    flex: 1;
+}

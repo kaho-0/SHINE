@@ -1,0 +1,83 @@
+header {
+    text-align: center;
+}
+.menu {
+    margin: 0 auto;
+    display: block;
+}
+
+div {
+    display: block;
+}
+
+div.menu-link {
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size: 28px;
+}
+
+a.sentaku {
+    margin: 0 20px 0 20px;
+    padding: 10px;
+}
+
+.sagasu-name {
+    font-size: 28px;
+    margin: 30px;
+    padding: 20px;
+    color: #55aaff;
+}
+.category-name {
+    white-space: nowrap;
+    font-size: 28px;
+    margin: 5px;
+    padding: 5px;
+    color: #55aaff;
+}
+
+
+div.main {
+    display: flex;
+}
+
+div.left-menu {
+    flex-grow: 1;
+    text-align: center;
+    line-height: 2em;
+    margin: 10px;
+    padding: 5px;
+}
+
+div.main-contents {
+    flex-grow: 2;
+    text-align: center;
+    border-left: #999 thick solid;
+}
+
+.shohin-img {
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 5px;
+}
+
+.img {
+    margin: 30px;
+    padding: 20px;
+}
+
+.btn1,
+.btn2 {
+    position: relative;
+    white-space: nowrap;
+    margin: 5px;
+}
+
+ul{
+    list-style: none;
+}
+
+body, h1, header {
+    margin: 0;
+    padding: 0;
+}
