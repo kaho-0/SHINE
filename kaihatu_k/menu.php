@@ -25,11 +25,17 @@
         <div class="main-contents">
             <div class="shohin-img">
                 <?php
-                for ($i = 0; $i < 3; $i++) {
-                    echo '<img class="img" src="./img/favo.png">
-                    <img class="img" src="./img/favo.png">
-                    <img class="img" src="./img/favo.png"><br>';
+                echo '<table>';
+                $pdo = new PDO($connect, USER, PASS);
+                    $sql = $pdo->prepare('select * from shohin');
+                foreach ($sql as $row) {
+                    echo '<tr>';
+                    echo '<td>';
+                    echo '<a href="./kaihatu/shohin1/shosai.php?id=', $id, '"><img src="',$row['img_pass'], '"></a>';
+                    echo '</td>';
+                    echo '</tr>';
                 }
+                echo '</table>';
                 ?>
             </div>
         </div>
