@@ -2,40 +2,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style2.css">
     <title>ユーザー管理</title>
 </head>
 <body calss="b">
-<style>
-.cnt {
-    text-align: center;
-    font-size: 24px;
-}
-.right {
-    margin: 0 0 0 auto;
-    font-size: 24px;
-}
-.shohin {
-    display: inline-block; 
-    vertical-align: top; 
-    margin-left: 20px; 
-    font-size: 24px;
-}
-.button {
-    background: red;
-    color: white;
-    font-size: 24px; 
-    padding: 10px 20px; 
-    border: none; 
-    cursor: pointer;
-}
-.moji {
-    display: inline-block; 
-    vertical-align: top; 
-    line-height: 20px;
-    margin-left: 20px; 
-    font-size: 24px;
-}
-</style>
+
     <div class="header-logo">
         <h1 class="shine">SHINE</h1>
     </div>
