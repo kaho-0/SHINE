@@ -12,7 +12,7 @@
     </div>
     <div class="cnt">
         <h1>ユーザー管理</h1>
-        <p>お名前：　　　　　生年月日：　　月　　日</p>
+        <p>お名前：　　<span style="margin-right: 45px;"></span>生年月日：　　月　　日</p>
         <p>住所 <input type="text" name="jusyo"></p>
         <p>メールアドレス <input type="text" name="mail"></p>
         <p>電話番号：　　　　　　</p>
@@ -29,8 +29,8 @@
 
     <div class="shohin">
         <p>商品名</p>
-        <p>カラー：　　　　　　数量：　　</p>
-        <p>サイズ：　　　　　　￥　　　　円</p>
+        <p>カラー：○○<span style="margin-right: 80px;"></span>数量：○</p>
+        <p>サイズ：○<span style="margin-right: 80px;"></span>￥○○○○円</p>
     </div>
     <hr>
 </body>
