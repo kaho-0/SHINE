@@ -1,16 +1,21 @@
 header {
     text-align: center;
 }
+
 .menu {
-    margin: 0 auto;
-    display: block;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-div {
-    display: block;
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
 }
 
-div.menu-link {
+.menu-link {
     margin: 5px;
     padding: 5px;
     text-align: center;
@@ -28,6 +33,7 @@ a.sentaku {
     padding: 20px;
     color: #55aaff;
 }
+
 .category-name {
     white-space: nowrap;
     font-size: 28px;
@@ -36,29 +42,31 @@ a.sentaku {
     color: #55aaff;
 }
 
-
-div.main {
-    display: flex;
-}
-
-div.left-menu {
-    flex-grow: 1;
+.sidebar {
+    width: 15%;
     text-align: center;
     line-height: 2em;
-    margin: 10px;
-    padding: 5px;
+    margin: 20px;
+    padding: 10px;
+    border-right: #999 thick solid;
 }
 
-div.main-contents {
-    flex-grow: 2;
-    text-align: center;
-    border-left: #999 thick solid;
+.menu-bar {
+    flex-grow: 1;
+}
+
+.main-contents {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 85%
 }
 
 .shohin-img {
     flex-wrap: wrap;
-    margin: 10px;
-    padding: 5px;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
 }
 
 .img {
@@ -73,11 +81,14 @@ div.main-contents {
     margin: 5px;
 }
 
-ul{
+ul {
     list-style: none;
+    padding: 0;
 }
 
-body, h1, header {
+body,
+h1,
+header {
     margin: 0;
     padding: 0;
 }
