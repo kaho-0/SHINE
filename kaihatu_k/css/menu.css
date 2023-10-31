@@ -30,8 +30,16 @@ body {
 }
 
 .left-menu {
-    padding: 10px;
+    margin: 0 auto;
+    padding: 5px;
+    width: 20%;
     border-right: 1px solid #aaaaaa;
+}
+
+.main-contents {
+    margin: 0 auto;
+    padding: 0;
+    width: 70%;
 }
 
 .category-name {
