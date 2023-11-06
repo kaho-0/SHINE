@@ -47,12 +47,16 @@
     margin-left:50px;
 }
 .kuhaku{
-    margin-left:360px; 
+    margin-right: 0;
+    margin-left: auto;
+    width: 35%;
 }
+
 .ku {
     margin-left: 10px; 
     margin-right: 10px;
 }
+
 
 /*rieki.php*/
 

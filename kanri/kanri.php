@@ -1,3 +1,7 @@
+<?php
+session_start();
+require 'dbconnect.php';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -12,12 +16,35 @@
     </div>
     <div class="cnt">
         <h1>ユーザー管理</h1>
-        <p>お名前：　　<span style="margin-right: 45px;"></span>生年月日：　　月　　日</p>
-        <p>住所 <input type="text" name="jusyo"></p>
-        <p>メールアドレス <input type="text" name="mail"></p>
-        <p>電話番号：　　　　　　</p>
-    <hr>
-        <input type="submit" class="button" value='アカウント削除' style="background:red;color:white;">
+        <?php
+            if (isset($_GET['client_id'])) {
+                $client_id = $_GET['client_id'];
+                $pdo = new PDO($connect, USER, PASS);
+                $sql = 'SELECT * FROM client WHERE ID = :client_id';
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindParam(':client_id', $client_id, PDO::PARAM_STR); 
+                $stmt->execute();
+                $client = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($client) {
+                echo '<p>お名前： ','<span style="color: red;">' . $client['name'] . '</span> 生年月日： ','<span style="color: red;">' . $client['BD'] . '</span></p>';
+                echo '<p>住所： ','<span style="color: red;">' . $client['address'] . '</span></p>';
+                echo '<p>メールアドレス： ','<span style="color: red;">' . $client['mail'] . '</span></p>';
+                echo '<p>電話番号： ','<span style="color: red;">'  . $client['tell'] .  '</span></p>';
+            } else {
+                echo '登録された情報が見つかりませんでした。';
+            }
+            } else {
+                echo 'ユーザーIDが指定されていません。';
+            }
+        ?>
+     
+        <hr>
+        <form method="post" action="delete.php">
+        <input type="hidden" name="client_id" value="<?php echo $client_id; ?>">
+        <input type="submit" class="button" value="アカウント削除" style="background: red; color: white;">
+    </form>
+
     </div>
     <hr>
 
@@ -25,7 +52,7 @@
         購入した商品
     </div>
 
-        <img src="./img/favo.png" width="200" height="200">
+    <img src="./img/favo.png" width="200" height="200">
 
     <div class="shohin">
         <p>商品名</p>
