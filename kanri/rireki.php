@@ -1,31 +1,22 @@
-<?php require 'header.php' ; ?>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/style2.css">
-    <title>購入履歴</title>
-</head>
-    <body class="a">
-    
-        </style>
-        <h1 calss="rireki">○○様の注文履歴</h1>
-    <hr>
-        <h1 class="kensu">件数：○件</h1>
-        <img src="./img/favo.png" width="200" height="200">
-        <div class="shohin">
-            <p>商品名</P>
-            <p>カラー/サイズ</p>
-            <p>￥○○○○<span style="margin-right: 150px;"></span>数量：○</p>
-        </div>
-    <hr>
-        <img src="./img/favo.png" width="200" height="200">
-        <div class="shohin">
-            <p>商品名</P>
-            <p>カラー/サイズ</p>
-            <p>￥○○○○<span style="margin-right: 150px;"></span>数量：○</p>
-        </div>
-    <hr>
-    </body>
-</html>
+<?php
+session_start();
+require 'header.php';  
+if (isset($_GET['client_id'])) {
+    $client_id = $_GET['client_id'];
+ 
+    foreach ($purchase_history as $item) {
+        echo '<h1 class="rireki">' . $item['client_name'] . '様の注文履歴</h1>';
+        echo '<hr>';
+        echo '<h1 class="kensu">件数：' . count($purchase_history) . '件</h1>';
+        echo '<img src="' . $item['product_image'] . '" width="200" height="200">';
+        echo '<div class="shohin">';
+        echo '<p>商品名: ' . $item['product_name'] . '</p>';
+        echo '<p>カラー/サイズ: ' . $item['color_size'] . '</p>';
+        echo '<p>￥' . $item['price'] . '<span style="margin-right: 150px;"></span>数量：' . $item['quantity'] . '</p>';
+        echo '</div>';
+        echo '<hr>';
+    }
+} else {
+    echo 'ユーザーIDが指定されていません。';
+}
+?>

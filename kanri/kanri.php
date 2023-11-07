@@ -2,6 +2,7 @@
 session_start();
 require 'dbconnect.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,7 +10,7 @@ require 'dbconnect.php';
     <link rel="stylesheet" href="./css/style2.css">
     <title>ユーザー管理</title>
 </head>
-<body calss="b">
+<body class="b">
 
     <div class="header-logo">
         <h1 class="shine">SHINE</h1>
@@ -26,39 +27,54 @@ require 'dbconnect.php';
                 $stmt->execute();
                 $client = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($client) {
-                echo '<p>お名前： ','<span style="color: red;">' . $client['name'] . '</span> 生年月日： ','<span style="color: red;">' . $client['BD'] . '</span></p>';
-                echo '<p>住所： ','<span style="color: red;">' . $client['address'] . '</span></p>';
-                echo '<p>メールアドレス： ','<span style="color: red;">' . $client['mail'] . '</span></p>';
-                echo '<p>電話番号： ','<span style="color: red;">'  . $client['tell'] .  '</span></p>';
-            } else {
-                echo '登録された情報が見つかりませんでした。';
-            }
-            } else {
-                echo 'ユーザーIDが指定されていません。';
-            }
+                if ($client) {
+                    echo '<p>お名前： ','<span style="color: red;">' . $client['name'] . '</span> 生年月日： ','<span style="color: red;">' . $client['BD'] . '</span></p>';
+                    echo '<p>住所： ','<span style="color: red;">' . $client['address'] . '</span></p>';
+                    echo '<p>メールアドレス： ','<span style="color: red;">' . $client['mail'] . '</span></p>';
+                    echo '<p>電話番号： ','<span style="color: red;">'  . $client['tell'] .  '</span></p>';
+                } else {
+                    echo '登録された情報が見つかりませんでした。';
+                }
+            } 
+
         ?>
-     
         <hr>
         <form method="post" action="delete.php">
         <input type="hidden" name="client_id" value="<?php echo $client_id; ?>">
         <input type="submit" class="button" value="アカウント削除" style="background: red; color: white;">
-    </form>
-
+        </form>
     </div>
     <hr>
+    <?php
+    $detail_sql = 'SELECT * FROM detalist WHERE client_id = :client_id';
+    $detail_stmt = $pdo->prepare($detail_sql);
+    $detail_stmt->bindParam(':client_id', $client_id, PDO::PARAM_STR);
+    $detail_stmt->execute();
 
-    <div class="moji">
-        購入した商品
-    </div>
+    echo '<h1>購入した商品</h1>';
 
-    <img src="./img/favo.png" width="200" height="200">
+    if ($detail_stmt->rowCount() > 0) {
+        while ($row = $detail_stmt->fetch(PDO::FETCH_ASSOC)) {
+         
+            $shohin_sql = 'SELECT * FROM shohin WHERE S_ID = :shohin_id';
+            $shohin_stmt = $pdo->prepare($shohin_sql);
+            $shohin_stmt->bindParam(':shohin_id', $row['shohin_id'], PDO::PARAM_INT);
+            $shohin_stmt->execute();
+            $shohin = $shohin_stmt->fetch(PDO::FETCH_ASSOC);
 
-    <div class="shohin">
-        <p>商品名</p>
-        <p>カラー：○○<span style="margin-right: 80px;"></span>数量：○</p>
-        <p>サイズ：○<span style="margin-right: 80px;"></span>￥○○○○円</p>
-    </div>
-    <hr>
+            echo '<div class="shohin">';
+            echo '<img src="' . $shohin['img_pass'] . '" width="200" height="200">';
+            echo '<p>商品名: ' . $shohin['S_name'] . '</p>';
+            echo '<p>カラー: ' . $shohin['S_color'] . '<span style="margin-right: 80px;"></span>数量: ' . $row['kosu'] . '</p>';
+            echo '<p>サイズ: ' . $shohin['S_size'] . '<span style="margin-right: 160px;"></span>価格: ￥' . $shohin['S_price'] . '</p>';
+            echo '</div>';
+            echo '<hr>';
+
+
+        }
+    } else {
+        echo '購入した商品はありません。';
+    }
+    ?>
 </body>
 </html>
