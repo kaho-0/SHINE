@@ -2,7 +2,7 @@
 <?php
 if(isset($_SESSION['client'])){
     echo '<table>';
-    echo '<tr><th>商品番号</th><th>商品名</th>';
+    echo '<tr><th></th><th>商品名</th>';
     echo '<th>個数</th><th>価格</th><th>小計</th></tr>';
     $total=0;
     $pdo = new PDO($connect, USER, PASS);
@@ -12,7 +12,7 @@ if(isset($_SESSION['client'])){
     foreach($sql as $row){
         $id=$row['S_ID'];
         echo '<tr>';
-        echo '<td>',$id ,'</td>';
+        echo '<td><img alt="image" src="image/',$row['S_ID'],'.jpeg"></td>';
         echo '<td><a href="detail.php?S_ID='.$id.'">',$row['S_name'],'</a></td>';
         echo '<td>',$row['kosu'],'</td>';
         echo '<td>',$row['S_price'],'</td>';
@@ -21,6 +21,7 @@ if(isset($_SESSION['client'])){
         echo '<td>',$subtotal,'</td>';
         echo '<td><a href="cart-delete.php?id=',$id,'">削除</a></td>';
         echo '<tr>';
+        echo '<tr><td colspan="6"><hr></td></tr>';
     }
     echo '<tr><td>合計</td><td></td><td></td><td></td><td>',$total,'</td><td></td></tr>';
     echo '</table>';
