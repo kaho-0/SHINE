@@ -40,48 +40,48 @@ require 'dbconnect.php';
         ?>
        <hr>
             <form method="post" action="delete.php" id="deleteForm">
-            <input type="hidden" name="client_id" value="<?php echo $client_id; ?>">
-            <input type="submit" class="button" value="アカウント削除" style="background: red; color: white;">
-        </form>
+                <input type="hidden" name="client_id" value="<?php echo $client_id; ?>">
+                <input type="submit" class="button" value="アカウント削除" style="background: red; color: white;">
+            </form>
 
-        <script>
-            document.getElementById('deleteForm').addEventListener('submit', function (event) {
-                if (!confirm('本当にアカウントを削除しますか？')) {
-                    event.preventDefault(); 
-                 }
-            });
-        </script>
+            <script>
+                document.getElementById('deleteForm').addEventListener('submit', function (event) {
+                    if (!confirm('本当にアカウントを削除しますか？')) {
+                        event.preventDefault(); 
+                    }
+                });
+            </script>
 
         </div>
-    <hr>
-    <?php
-        $detail_sql = 'SELECT * FROM detalist WHERE client_id = :client_id';
-        $detail_stmt = $pdo->prepare($detail_sql);
-        $detail_stmt->bindParam(':client_id', $client_id, PDO::PARAM_STR);
-        $detail_stmt->execute();
+        <hr>
+            <?php
+                $detail_sql = 'SELECT * FROM detalist WHERE client_id = :client_id';
+                $detail_stmt = $pdo->prepare($detail_sql);
+                $detail_stmt->bindParam(':client_id', $client_id, PDO::PARAM_STR);
+                $detail_stmt->execute();
 
-            echo '<h1>購入した商品</h1>';
+                    echo '<h1>購入した商品</h1>';
 
-                if ($detail_stmt->rowCount() > 0) {
-                    while ($row = $detail_stmt->fetch(PDO::FETCH_ASSOC)) {
-         
-                    $shohin_sql = 'SELECT * FROM shohin WHERE S_ID = :shohin_id';
-                    $shohin_stmt = $pdo->prepare($shohin_sql);
-                    $shohin_stmt->bindParam(':shohin_id', $row['shohin_id'], PDO::PARAM_INT);
-                    $shohin_stmt->execute();
-                    $shohin = $shohin_stmt->fetch(PDO::FETCH_ASSOC);
+                        if ($detail_stmt->rowCount() > 0) {
+                            while ($row = $detail_stmt->fetch(PDO::FETCH_ASSOC)) {
+                
+                            $shohin_sql = 'SELECT * FROM shohin WHERE S_ID = :shohin_id';
+                            $shohin_stmt = $pdo->prepare($shohin_sql);
+                            $shohin_stmt->bindParam(':shohin_id', $row['shohin_id'], PDO::PARAM_INT);
+                            $shohin_stmt->execute();
+                            $shohin = $shohin_stmt->fetch(PDO::FETCH_ASSOC);
 
-                        echo '<div class="shohin">';
-                        echo '<img src="' . $shohin['img_pass'] . '" width="200" height="200">';
-                        echo '<p>商品名: ' . $shohin['S_name'] . '</p>';
-                        echo '<p>カラー: ' . $shohin['S_color'] . '<span style="margin-right: 80px;"></span>数量: ' . $row['kosu'] . '</p>';
-                        echo '<p>サイズ: ' . $shohin['S_size'] . '<span style="margin-right: 160px;"></span>価格: ￥' . $shohin['S_price'] . '</p>';
-                        echo '</div>';
-                        echo '<hr>';
-                    }
-                } else {
-                    echo '購入した商品はありません。';
-                }
-    ?>
-</body>
+                                echo '<div class="shohin">';
+                                echo '<img src="' . $shohin['img_pass'] . '" width="200" height="200">';
+                                echo '<p>商品名: ' . $shohin['S_name'] . '</p>';
+                                echo '<p>カラー: ' . $shohin['S_color'] . '<span style="margin-right: 80px;"></span>数量: ' . $row['kosu'] . '</p>';
+                                echo '<p>サイズ: ' . $shohin['S_size'] . '<span style="margin-right: 160px;"></span>価格: ￥' . $shohin['S_price'] . '</p>';
+                                echo '</div>';
+                                echo '<hr>';
+                            }
+                        } else {
+                            echo '購入した商品はありません。';
+                        }
+            ?>
+    </body>
 </html>
