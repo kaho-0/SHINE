@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <li><a href="./shohin1/shosai.php">管理</a></li>
+    <title>ショッピングカート</title>
+</head>
+<body>
+    <hr width="100%">
+    <h1>ショッピングカート</h1>
+    <p class="confirmation">カートに入りました</p>
+    <table>
+        <tbody>
+            <hr width="100%">
+            <tr>
+                <td>
+                    <img src="product1.jpg"width="150" height="100">
+                </td>
+                <td>
+                    <div class="product-info">
+                        <p class="product-name">商品1</p>
+                        <p>カラー:赤 ¥1,000　　　　　　　　　　　　　　　　　　　　<button class="button" @click="increment">+1</button><button class="button" @click="decrement">-1</button><button>削除</button></p>
+                        <p>サイズ:M</p>
+                        
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="product2.jpg"width="150" height="100">
+                </td>
+                <td>
+                    <div class="product-info">
+                        <p class="product-name">商品2</p>
+                        <p>カラー:青 ¥800　　　　　　　　　　　　　　　　　　　　<button class="button" @click="increment">+1</button><button class="button" @click="decrement">-1</button><button>削除</button></p>
+                        <p>サイズ:L</p>
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr width="100%">
+    <div>
+        <button class="center">注文する</button>
+    </div>
+</body>
+</html>

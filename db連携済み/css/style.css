@@ -1,0 +1,360 @@
+/*syori.php*/
+div.syori{
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+}
+p.syori{
+    text-align: center;
+}
+input.syoritext {
+    margin: 0 auto;
+}
+
+
+
+/*header.php*/
+
+
+div.header-logo {
+    display: inline-block;
+    font-size: 28px;
+    margin: 10px  0px 10px 50px;
+    padding: 5px;
+    vertical-align: middle;
+    line-height: 0.5;
+}
+
+div.ARIGATOU{
+    display: block;
+    padding: 0px;
+    font-size: 28px;
+    justify-content: center;
+    margin: 0px;
+}
+
+div.header-logo.spam{
+    font-size: 32px;
+}
+
+div.header-kensaku {
+    display: inline-block;
+    margin: 0 90px 0 50px;
+    padding: 5px;
+    vertical-align: middle;
+}
+#kensaku {
+    margin: auto;
+    width: 750px;
+    height: 40px;
+    border-radius: 10px;
+}
+div.header-cart {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
+    padding: 5px;
+}
+div.header-mypage {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
+    padding: 5px;
+}
+div.header-favo {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
+    padding: 5px;
+}
+body.header,h1.header,header.header {
+    margin: 0;
+    padding: 0;
+}
+
+/*kato.php*/
+.product-name {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.product-info {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+hr.kato{
+    display: block;
+}
+
+body.kato {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+h1.kato {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 0;
+}
+
+table.kato {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table td.kato {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.product-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 16px;
+}
+
+.button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.center {
+    display: block;
+    margin: 20px auto;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.center:hover {
+    background-color: #0056b3;
+}
+
+
+/*Konyukanryo.php*/
+.ori {
+    z-index: -1;
+    position: fixed;
+    top: 0px;
+    left: 100px;
+    width: 1250px;
+    height: 852px;
+    flex-shrink: 0;
+}
+.jagaimo-2 {
+    z-index: -2;
+    position: fixed;
+    bottom: 600px;
+    left: 150px;
+    width: 160.5px;
+    height: 132.5px;
+    flex-shrink: 0;
+}
+
+.mimizu {
+    z-index: -3;
+    position: fixed;
+    bottom: 100px;
+    left: 100px;
+    width: 192px;
+    height: 252px;
+    flex-shrink: 0;
+}
+
+.yama {
+    z-index: -4;
+    position: fixed;
+    top: -60px;
+    left: -140px;
+    width: 1000.92px;
+    height: 900.379px;
+    flex-shrink: 0;
+}
+
+body.Konyukanryo {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; 
+    font-size: 18px; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+h1.Konyukanryo {
+    font-size: 48px; 
+    color: #333;
+    margin-top: 20px;
+}
+
+div.Konyukanryo {
+    font-size: 96px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    margin: auto;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 24px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/*menu.php*/
+div.menu-link {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 28px;
+}
+
+a.sentaku {
+    display: inline-block;
+    margin: 0 20px 0 20px;
+    padding: 10px;
+}
+
+.sagasu-name {
+    display: inline;
+    font-size: 28px;
+    margin: 30px;
+    padding: 20px;
+    color: #55aaff;
+}
+.category-name {
+    display: inline;
+    font-size: 28px;
+    margin: 30px;
+    padding: 20px;
+    color: #55aaff;
+}
+
+div.left-menu {
+    display: inline-block;
+    line-height: 2em;
+    padding: 5px;
+    border-right: #aaaaaa thick solid;
+}
+
+.btn1,
+.btn2 {
+    display: block;
+    margin: 5px;
+}
+
+ul{
+    list-style: none;
+}
+
+.menu {
+    margin: 0 auto;
+}
+
+
+/*shosai.php*/
+
+/*
+html.shosai, body.shosai {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+body.shosai {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+*/
+.product-container {
+    display: flex;
+   /* border: 1px solid #ccc;*/
+    max-width: 1300px;
+    width: 130%;
+    box-sizing: border-box;
+    padding: 70px;
+    transform: scale(1.5);
+    transform-origin: top left;
+}
+.left-column {
+    flex-basis: 40%; 
+    padding-right: -100px;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+.right-column {
+    flex-basis: 60%; 
+    padding-left: -100px;
+}
+.product-details {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.size-inventory {
+    list-style: none;
+    padding: 0;
+}
+.size-inventory li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.inventory-status {
+    margin-right: 10px;
+}
+.size-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10p
+}
