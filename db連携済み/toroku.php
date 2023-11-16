@@ -54,7 +54,7 @@ if (isset($_SESSION['client'])) {
             </div>
 
             <div>
-                <a href="rireki.php">注文履歴</a>
+                <a href="rireki.php?client_id=<?php echo $row['ID']; ?>">注文履歴</a>
                 <a href="toroku1.php">登録情報の変更</a>
                 <form action="login-input.php" method="post">
                     <input type="submit" value="ログアウト">
