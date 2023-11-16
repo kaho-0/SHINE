@@ -1,28 +1,28 @@
 <?php
+$name = "name";
+$address = "address";
+$BD = "BD";
+$email = "mail";
+$PW = "PW";
+$address1 = "address";
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "mysql218.phy.lolipop.lan";
-    $username = "LAA1517459-ensyu";
-    $password = "LAA1517459";
-    $dbname = "Pass0515";
-
-    $name = $_POST['name'];
-    $postal = $_POST['postal'];
-    $address = $_POST['address'];
-    $BD = $_POST['birthdate'];
-    $email = $_POST['email'];
-    $PW = $_POST['password'];
-    $delivery_address = $_POST['delivery_address'];
+    $username = "LAA1517459";
+    $password = "Pass0515";
+    $dbname = "LAA1517459-ensyu";
     
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
     
-    $stmt = $conn->prepare("INSERT INTO users (name, postal, address, BD, email, PW, delivery_address) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss", $name, $postal, $address, $BD, $email, $PW, $delivery_address);
+    $stmt = $conn->prepare("UPDATE users SET name=?, postal=?, address=?, BD=?, email=?, PW=?, delivery_address=? WHERE id=?");
+    $stmt->bind_param("sssssssi", $_POST['name'], $_POST['postal'], $_POST['address'], $_POST['birthdate'], $_POST['email'], $_POST['password'], $_POST['delivery_address'], $user_id); // ここで$user_idはログインしたユーザーのIDに置き換える必要があります
     
     if ($stmt->execute() === TRUE) {
-        echo "新しいレコードが追加されました";
+        echo "レコードが更新されました";
     } else {
         echo "エラー: " . $stmt->error;
     }
@@ -31,10 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close(); 
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ユーザー情報管理</title>
     <style>
@@ -96,6 +97,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <div class="form-group">
+            <label for="name">名前</label>
+            <input type="text" id="name" name="name" value="<?php echo $name; ?>" required>
+        </div>
+        <body>
     <h1>○○様の登録情報</h1>
     <div class="container">
         <h2>基本情報</h2>
@@ -128,8 +135,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="delivery_address">お届け先の変更</label>
                 <textarea id="delivery_address" name="delivery_address" required></textarea>
             </div>
-            <button type="submit">登録情報を確定する</button>
         </form>
-    </div>
+        <button type="submit">登録情報を確定する</button>
+    </form>
 </body>
 </html>
