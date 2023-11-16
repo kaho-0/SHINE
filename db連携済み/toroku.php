@@ -54,9 +54,9 @@ if (isset($_SESSION['client'])) {
             </div>
 
             <div>
-                <a href="注文履歴のリンク先">注文履歴</a>
-                <a href="登録情報変更のリンク先">登録情報の変更</a>
-                <form action="logout.php" method="post">
+                <a href="rireki.php">注文履歴</a>
+                <a href="toroku1.php">登録情報の変更</a>
+                <form action="login-input.php" method="post">
                     <input type="submit" value="ログアウト">
                 </form>
             </div>
