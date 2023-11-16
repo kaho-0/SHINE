@@ -14,8 +14,8 @@ try {
 }
 
 session_start(); 
-if (isset($_SESSION['client_id'])) {
-    $client_id = $_SESSION['client_id'];
+if (isset($_SESSION['client'])) {
+    $client_id = $_SESSION['client']['ID'];
     $sql = $pdo->prepare('SELECT * FROM client WHERE ID = ?');
     $sql->execute([$client_id]);
 
@@ -54,9 +54,9 @@ if (isset($_SESSION['client_id'])) {
             </div>
 
             <div>
-                <a href="注文履歴のリンク先">注文履歴</a>
-                <a href="登録情報変更のリンク先">登録情報の変更</a>
-                <form action="logout.php" method="post">
+                <a href="rireki.php">注文履歴</a>
+                <a href="toroku1.php">登録情報の変更</a>
+                <form action="login-input.php" method="post">
                     <input type="submit" value="ログアウト">
                 </form>
             </div>
