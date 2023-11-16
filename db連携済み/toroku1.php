@@ -1,12 +1,4 @@
 <?php
-$name = "name";
-$address = "address";
-$BD = "BD";
-$email = "mail";
-$PW = "PW";
-$address1 = "address";
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "mysql218.phy.lolipop.lan";
     $username = "LAA1517459";
@@ -18,8 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
     
-    $stmt = $conn->prepare("UPDATE users SET name=?, postal=?, address=?, BD=?, email=?, PW=?, delivery_address=? WHERE id=?");
-    $stmt->bind_param("sssssssi", $_POST['name'], $_POST['postal'], $_POST['address'], $_POST['birthdate'], $_POST['email'], $_POST['password'], $_POST['delivery_address'], $user_id); // ここで$user_idはログインしたユーザーのIDに置き換える必要があります
+    $stmt = $conn->prepare("UPDATE users SET name=?, address=?, BD=?, mail=?, PW=?, address1=? WHERE id=?");
+    $stmt->bind_param("sssssssi", $_POST['name'], $_POST['address'], $_POST['BD'], $_POST['mail'], $_POST['PW'], $_POST['address1'], $user_id);
     
     if ($stmt->execute() === TRUE) {
         echo "レコードが更新されました";
@@ -29,6 +21,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->close(); 
     $conn->close(); 
+}else{
+    $name = $address = $BD = $email = $PW = $address1 = '';
+if(isset($_SESSION['client'])){
+        $name=$_SESSION['client']['name'];
+        $address=$_SESSION['client']['address'];
+        $address=$_SESSION['client']['BD'];
+        $email=$_SESSION['client']['email'];
+        $PW=$_SESSION['client']['PW'];
+        $address=$_SESSION['client']['address1'];
+    }
 }
 ?>
 
@@ -98,42 +100,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <div class="form-group">
-            <label for="name">名前</label>
-            <input type="text" id="name" name="name" value="<?php echo $name; ?>" required>
-        </div>
-        <body>
     <h1>○○様の登録情報</h1>
     <div class="container">
         <h2>基本情報</h2>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+
             <div class="form-group">
                 <label for="name">名前</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required value="<?= $name ?>">
             </div>
-            <div class="form-group">
-                <label for="postal">郵便番号</label>
-                <input type="text" id="postal" name="postal" required>
-            </div>
+
             <div class="form-group">
                 <label for="address">住所</label>
-                <textarea id="address" name="address" required></textarea>
+                <textarea id="address" name="address" required value="<?= $name ?>"></textarea>
             </div>
             <div class="form-group">
-                <label for="birthdate">生年月日</label>
-                <input type="date" id="birthdate" name="birthdate" required>
+                <label for="BD">生年月日</label>
+                <input type="date" id="BD" name="BD" required value="<?= $name ?>">
             </div>
             <div class="form-group">
-                <label for="email">メールアドレス</label>
-                <input type="email" id="email" name="email" required>
+                <label for="mail">メールアドレス</label>
+                <input type="mail" id="mail" name="mail" required value="<?= $name ?>">
             </div>
             <div class="form-group">
-                <label for="password">パスワード</label>
-                <input type="password" id="password" name="password" required>
+                <label for="PW">パスワード</label>
+                <input type="PW" id="PW" name="PW" required value="<?= $name ?>">
             </div>
             <div class="form-group">
-                <label for="delivery_address">お届け先の変更</label>
-                <textarea id="delivery_address" name="delivery_address" required></textarea>
+                <label for="address1">お届け先の変更</label>
+                <textarea id="address1" name="address1" required value="<?= $name ?>"></textarea>
             </div>
         </form>
         <button type="submit">登録情報を確定する</button>
