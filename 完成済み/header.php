@@ -23,7 +23,7 @@
                 <a href="cart-show.php"><img src="./image/cart.png" width="50px" height="50px"></a>
             </div>
             <div class="header-mypage">
-                <a href="detalist-show.php"><img src="./image/mypage.png" width="50px" height="50px"></a>
+                <a href="#"><img src="./image/mypage.png" width="50px" height="50px"></a>
             </div>
             <div class="header-favo">
                 <a href="favorite-show.php"><img src="./image/favo.png" width="50px" height="50px"></a>
