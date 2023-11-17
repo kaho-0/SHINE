@@ -34,7 +34,7 @@
                         echo '<option value"ブラック">ブラック</option>';
                         echo '<option value"ホワイト">ホワイト</option>';
                         echo '<option value"ピンク">ピンク</option>';
-                        echo '<option value"ベージュ">ベージュ</option>';
+                        echo '<option value"オレンジ">オレンジ</option>';
                     echo '</select></p>';
                 }
                 if($row['S_size']!=null){

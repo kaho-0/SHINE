@@ -9,9 +9,10 @@ if(isset($_SESSION['client'])){
     $sql->execute([$_SESSION['client']['ID']]);
     foreach($sql as $row){
         $id=$row['S_ID'];
+        $name=$row['S_name'];
         echo '<tr>';
         echo '<td>',$id ,'</td>';
-        echo '<td><a href="detail.php?S_ID='.$id.'">',$row['S_name'],'</a></td>';
+        echo '<td><a href="detail.php?S_name='.$name.'">',$row['S_name'],'</a></td>';
         echo '<td>',$row['kosu'],'</td>';
         echo '<td>',$row['S_price'],'</td>';
         echo '<tr>';

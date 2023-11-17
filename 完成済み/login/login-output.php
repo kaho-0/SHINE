@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php require 'db-connect.php'; ?> 
 <?php require 'header.php'; ?>
+<?php require 'menu.php'; ?>
 <?php
 unset($_SESSION['client']);
 $pdo = new PDO($connect, USER, PASS);
@@ -11,9 +12,10 @@ if ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
     if ($_POST['PW'] == $row['PW']) {
         $_SESSION['client'] = [
             'ID' => $row['ID'], 'PW' => $row['PW'], 'name' => $row['name'], 'BD' => $row['BD'],
-            'address' => $row['address'], 'mail' => $row['mail']
+            'address' => $row['address'], 'mail' => $row['mail'] ,'tell'=>$row['tell']
         ];
         echo 'いらっしゃいませ、', $_SESSION['client']['name'], 'さん。';
+        echo '<a href="toroku.php">aa</a>';
     } else {
         echo 'ログイン名またはパスワードが違います。';
     }
