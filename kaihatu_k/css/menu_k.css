@@ -56,22 +56,48 @@ a.sentaku {
 }
 
 .main-contents {
-    display: flex;
+    /* display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    flex-grow: 1;
-    width: 85%
+    flex-grow: 1; */
+    width: 85%;
 }
 
 .shohin-img {
+    display: -webkit-box;    /* old Android */
+    display: -webkit-flex;   /* Safari etc. */
+    display: -ms-flexbox;    /* IE10        */
+    display: flex;
+}
+
+#s_img {
+    -webkit-flex-wrap: wrap;          /* Safari etc. */
+    -ms-flex-wrap    : wrap;          /* IE10        */
+    flex-wrap        : wrap;
+    margin: 10px;
+    padding: 5px;
+}
+
+.shohin-category-img {
+    flex-direction: column;
+    vertical-align: top;
+    margin: 0 0 0 60px;
+}
+
+/* .shohin-category-img ul {
+    display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     flex-grow: 1;
-    text-align: center;
+} */
+.shohin-category-img li {
+    margin: auto;
+    padding: 10px;
 }
 
 .img {
-    margin: 30px;
-    padding: 20px;
+    width: 300px;
+    height: 300px;
 }
 
 .btn1,

@@ -1,83 +1,112 @@
-/* Reset default margins and paddings */
-body, h1, header {
-    margin: 0;
-    padding: 0;
+header {
+    text-align: center;
 }
 
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-}
-
-/* Menu styles */
 .menu {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    align-items: stretch;
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
 }
 
 .menu-link {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-    padding: 10px;
-}
-
-.sentaku {
-    margin: 0 20px;
-    padding: 10px;
-    text-decoration: none;
-    color: #000;
-}
-
-.left-menu {
-    margin: 0 auto;
+    margin: 5px;
     padding: 5px;
-    width: 20%;
-    border-right: 1px solid #aaaaaa;
+    text-align: center;
+    font-size: 28px;
 }
 
-.main-contents {
-    margin: 0 auto;
-    padding: 0;
-    width: 70%;
+a.sentaku {
+    margin: 0 20px 0 20px;
+    padding: 10px;
+}
+
+.sagasu-name {
+    font-size: 28px;
+    margin: 30px;
+    padding: 20px;
+    color: #55aaff;
 }
 
 .category-name {
+    white-space: nowrap;
     font-size: 28px;
-    margin: 10px;
+    margin: 5px;
     padding: 5px;
     color: #55aaff;
 }
 
-.category ul {
+.sidebar {
+    width: 15%;
+    text-align: center;
+    line-height: 2em;
+    margin: 20px;
+    padding: 10px;
+    border-right: #999 thick solid;
+}
+
+.menu-bar {
+    flex-grow: 1;
+}
+
+.main-contents {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 85%
+}
+
+.shohin-img {
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.shohin-category-img {
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
+.shohin-category-img ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.shohin-category-img li {
+    display: inline-block;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: auto;
+    padding: 10px;
+}
+
+.img {
+    width: 50%;
+    height: 50%;
+}
+
+.btn1,
+.btn2 {
+    position: relative;
+    white-space: nowrap;
+    margin: 5px;
+}
+
+ul {
     list-style: none;
     padding: 0;
 }
 
-.category li {
-    margin: 5px;
-}
-
-.shohin-img {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.img {
-    margin: 10px;
-    padding: 5px;
-    border: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-}
-
-.btn2 {
-    text-decoration: none;
-    color: #55aaff;
-}
-
-.main-menu {
-    flex: 1;
+body,
+h1,
+header {
+    margin: 0;
+    padding: 0;
 }

@@ -8,24 +8,28 @@
 </head>
 
 <body>
-    <div class="header">
+    <div class="header" content="width=device-width">
         <header>
             <div class="header-logo">
-                <h1>SHINE</h1>
+                <a href="index.php">
+                    <img src="./image/header/logo.png" class="logo" alt="">
+                </a>
             </div>
             <div class="header-kensaku">
                 <form action="index.php" method="post">
-                    <input id="kensaku" type="text" placeholder="キーワードを入力"></input>
+                    <input id="kensaku" name="kensaku" type="text" placeholder="キーワードを入力"></input>
                 </form>
             </div>
-            <div class="header-cart">
-                <a href="#"><img src="./img/cart.png" width="50px" height="50px"></a>
-            </div>
-            <div class="header-mypage">
-                <a href="#"><img src="./img/mypage.png" width="50px" height="50px"></a>
-            </div>
-            <div class="header-favo">
-                <a href="#"><img src="./img/favo.png" width="50px" height="50px"></a>
+            <div class="header-button">
+                <div class="header-cart">
+                    <a href="#"><img src="./image/header/cart.png" width="50px" height="50px"></a>
+                </div>
+                <div class="header-mypage">
+                    <a href="#"><img src="./image/header/mypage.png" width="50px" height="50px"></a>
+                </div>
+                <div class="header-favo">
+                    <a href="#"><img src="./image/header/favo.png" width="50px" height="50px"></a>
+                </div>
             </div>
         </header>
     </div>

@@ -1,41 +1,51 @@
 div.header-logo {
     display: inline-block;
-    font-size: 28px;
-    margin: 20px;
-    padding: 10px;
     vertical-align: middle;
+    margin: 10px;
+    padding: 5px;
 }
 
 div.header-kensaku {
     display: inline-block;
-    margin: 0 80px 0 50px;
+    margin: 0 20px 0 20px;
     padding: 5px;
     vertical-align: middle;
+    width: auto;
 }
 #kensaku {
     margin: auto;
-    width: 730px;
+    width: 500px;
     height: 40px;
     border-radius: 10px;
     font-size: large;
 }
+
+div.header-button {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px;
+}
+
 div.header-cart {
     display: inline-block;
     vertical-align: middle;
     margin: 10px;
     padding: 5px;
+    width: auto;
 }
 div.header-mypage {
     display: inline-block;
     vertical-align: middle;
     margin: 10px;
     padding: 5px;
+    width: auto;
 }
 div.header-favo {
     display: inline-block;
     vertical-align: middle;
     margin: 10px;
     padding: 5px;
+    width: auto;
 }
 
 body,h1,header {
