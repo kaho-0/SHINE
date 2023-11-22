@@ -1,28 +1,29 @@
-<?php 
+<?php
 session_start();
 require 'header.php';
-?>
-<?php
-const SERVER = 'mysql218.phy.lolipop.lan';
-const DBNAME = 'LAA1517459-ensyu';
-const USER = 'LAA1517459';
-const PASS = 'Pass0515';
-
-$connect = 'mysql:host=' . SERVER . ';dbname=' . DBNAME . ';charset=utf8';
-
-try {
-    $pdo = new PDO($connect, USER, PASS);
-} catch (PDOException $e) {
-    echo "Database connection failed: " . $e->getMessage();
-    exit();
-}
+require 'db-connect.php'; 
 
 if (isset($_SESSION['client'])) {
     $client_id = $_SESSION['client']['ID'];
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $user_id = $_SESSION['client']['ID'];
+        $stmt = $pdo->prepare("UPDATE client SET name=?, address=?, mail=?, PW=? WHERE ID=?");
+        $stmt->execute([
+            $_POST['name'],
+            $_POST['address'],
+            $_POST['mail'],
+            $_POST['PW'],
+            $user_id
+        ]);
+    }
+
     $sql = $pdo->prepare('SELECT * FROM client WHERE ID = ?');
     $sql->execute([$client_id]);
+    $row = $sql->fetch(PDO::FETCH_ASSOC);
+    $_SESSION['client'] = $row;
 
-    if ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+    if ($row) {
         echo '
         <!DOCTYPE html>
         <html lang="ja">
@@ -58,7 +59,7 @@ if (isset($_SESSION['client'])) {
 
             <div>
                 <a href="rireki.php?client_id=', $row['ID'], '">注文履歴</a>
-                <a href="toroku1.php">登録情報の変更</a>
+                <a href="toroku1.php">登録情報を変更する</a>
                 <form action="login-input.php" method="post">
                     <input type="submit" value="ログアウト">
                 </form>
