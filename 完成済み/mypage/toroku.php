@@ -48,11 +48,9 @@ if (isset($_SESSION['client'])) {
                 <hr>
                 <p>パスワード: ', $row['PW'], '</p>
                 <hr>
-                <p>カード番号: ', $row['card_number'], '</p>
+                <p>カード番号: ', $row['card_num'], '</p>
                 <hr>
-                <p>セキュリティコード: ', $row['security_code'], '</p>
-                <hr>
-                <p>有効期限: ', $row['expiration_date'], '</p>
+                <p>有効期限: ', $row['card_date'], '</p>
                 <hr>
                 <p>現在の住所: ', $row['address'], '</p>
                 <hr>
