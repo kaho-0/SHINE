@@ -23,7 +23,7 @@
             <div class="header-button">
                 <div class="header-cart">
                     <a href="cart/cart-show.php">
-                        <img src="./image/header/cart.png" width="50px" height="50px">
+                        <img src="image/header/cart.png" width="50px" height="50px">
                     </a>
                 </div>
                 <div class="header-mypage">
