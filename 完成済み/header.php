@@ -22,13 +22,19 @@
             </div>
             <div class="header-button">
                 <div class="header-cart">
-                    <a href="#"><img src="./image/header/cart.png" width="50px" height="50px"></a>
+                    <a href="cart/cart-show.php">
+                        <img src="./image/header/cart.png" width="50px" height="50px">
+                    </a>
                 </div>
                 <div class="header-mypage">
-                    <a href="#"><img src="./image/header/mypage.png" width="50px" height="50px"></a>
+                    <a href="mypage/touroku.php">
+                        <img src="./image/header/mypage.png" width="50px" height="50px">
+                    </a>
                 </div>
                 <div class="header-favo">
-                    <a href="#"><img src="./image/header/favo.png" width="50px" height="50px"></a>
+                    <a href="#">
+                        <img src="./image/header/favo.png" width="50px" height="50px">
+                    </a>
                 </div>
             </div>
         </header>
