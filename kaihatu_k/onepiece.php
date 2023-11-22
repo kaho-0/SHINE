@@ -25,18 +25,17 @@
                 </div>
             </div>
             <div class="shohin-img">
-                <ul class="shohin-category-img">
+                <div class="shohin-category-img">
                     <?php
                     $pdo = new PDO($connect, USER, PASS);
                     $sql = $pdo->query('select distinct S_name, img_pass from shohin where S_cate="ワンピース" && S_size="S"');
                     foreach ($sql as $row) {
-                        echo '<li>';
-                        echo '<div>'.$row['S_name'].'<img class="img" src="' . $row['img_pass'] . '"></div>';
-                        echo '</li>';
+                        echo '<img id="s_img" class="img" src="' . $row['img_pass'] . '">';
                     }
                     ?>
-                </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<?php require 'footer.php'; ?>

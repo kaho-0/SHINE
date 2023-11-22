@@ -19,24 +19,24 @@
         <div class="main-contents">
             <div class="menu-ber">
                 <div class="menu-link">
-                <a href="index.php" class="sentaku">全て</a>
+                    <a href="index.php" class="sentaku">全て</a>
                     <a href="mens.php" class="sentaku">メンズ</a>
                     <a href="womans.php" class="sentaku">レディース</a>
                 </div>
             </div>
             <div class="shohin-img">
-                <ul class="shohin-category-img">
+                <div class="shohin-category-img">
                     <?php
                     $pdo = new PDO($connect, USER, PASS);
                     $sql = $pdo->query('select distinct S_name, img_pass from shohin where S_cate="パンツ" && S_size="S"');
                     foreach ($sql as $row) {
-                        echo '<li>';
-                        echo '<div>'.$row['S_name'].'<img class="img" src="' . $row['img_pass'] . '"></div>';
-                        echo '</li>';
+                        echo '<img id="s_img" class="img" src="' . $row['img_pass'] . '">';
                     }
                     ?>
-                </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<?php require 'footer.php'; ?>
+
