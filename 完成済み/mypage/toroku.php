@@ -29,12 +29,13 @@ if (isset($_SESSION['client'])) {
         <html lang="ja">
         <head>
             <meta charset="UTF-8">
-            <link rel="stylesheet" href="./css/style1.css">
+            <link rel="stylesheet" href="./css/style3.css">
             <title>登録情報</title>
         </head>
         <body>
+        <div class="container">
             <h1>', $row['name'], '様の登録情報</h1>
-            <div>
+            <div class="info-section">
                 <p>名前: ', $row['name'], '</p>
                 <hr>
                 <p>ご住所: ', $row['address'], '</p>
@@ -55,15 +56,18 @@ if (isset($_SESSION['client'])) {
                 <hr>
                 <p>現在の住所: ', $row['address'], '</p>
                 <hr>
-            </div>
-
-            <div>
+                </div>
+                <div class="link-section">
                 <a href="rireki.php?client_id=', $row['ID'], '">注文履歴</a>
                 <a href="toroku1.php">登録情報を変更する</a>
+                </div>
+                <div class="logout-form">
                 <form action="login-input.php" method="post">
                     <input type="submit" value="ログアウト">
                 </form>
             </div>
+            </div>
+
         </body>
         </html>';
     } else {
