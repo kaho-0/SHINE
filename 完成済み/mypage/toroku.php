@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'header.php';
-require 'db-connect.php'; 
+require '../header.php';
+require '../db-connect.php'; 
 
 if (isset($_SESSION['client'])) {
     $client_id = $_SESSION['client']['ID'];
