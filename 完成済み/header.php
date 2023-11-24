@@ -12,7 +12,7 @@
         <header>
             <div class="header-logo">
                 <a href="index.php">
-                    <img src="./image/header/logo.png" class="logo" alt="">
+                    <img src="../image/header/logo.png" class="logo" alt="">
                 </a>
             </div>
             <div class="header-kensaku">
