@@ -27,7 +27,7 @@
                     </a>
                 </div>
                 <div class="header-mypage">
-                    <a href="./mypage/touroku.php">
+                    <a href="./mypage/toroku.php">
                         <img src="./image/header/mypage.png" width="50px" height="50px">
                     </a>
                 </div>
