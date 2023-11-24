@@ -22,18 +22,18 @@
             </div>
             <div class="header-button">
                 <div class="header-cart">
-                    <a href="./cart/cart-show.php">
-                        <img src="./image/header/cart.png" width="50px" height="50px">
+                    <a href="../cart/cart-show.php">
+                        <img src="image/header/cart.png" width="50px" height="50px">
                     </a>
                 </div>
                 <div class="header-mypage">
-                    <a href="./mypage/toroku.php">
-                        <img src="./image/header/mypage.png" width="50px" height="50px">
+                    <a href="../mypage/toroku.php">
+                        <img src="image/header/mypage.png" width="50px" height="50px">
                     </a>
                 </div>
                 <div class="header-favo">
                     <a href="#">
-                        <img src="./image/header/favo.png" width="50px" height="50px">
+                        <img src="image/header/favo.png" width="50px" height="50px">
                     </a>
                 </div>
             </div>
