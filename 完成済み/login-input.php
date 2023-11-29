@@ -10,10 +10,36 @@
         .error-message {
             color: red;
         }
+
+        #eye-icon {
+            width: 30px; 
+            height: 30px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px; 
+            top: 40%; 
+            transform: translate(0, -50%);
+        }
+
+        .password-container {
+            position: relative;
+        }
     </style>
     <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("login-pass");
+            var eyeIcon = document.getElementById("eye-icon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.src = "./image/ai.png"; 
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.src = "./image/eye.png";
+            }
+        }
+
         function validateForm() {
-            
             var loginID = document.getElementById("login-id").value;
             var loginPW = document.getElementById("login-pass").value;
 
@@ -50,7 +76,10 @@
             </class>
             <class id="LOGIN-PASS">
                 <label for="loginpass" id="loginpass">password</label><br>
-                <input id="login-pass" name="PW" type="password" placeholder="パスワードを入力">
+                <div class="password-container">
+                    <input id="login-pass" name="PW" type="password" placeholder="パスワードを入力">
+                    <img id="eye-icon" src="./image/ai.png" onclick="togglePassword()" alt="eye-icon" style="cursor: pointer;">
+                </div>
             </class>
             <p><button id="login-button" type="submit">ログイン</button></p>
             <p class="error-message" id="error-message"></p>
@@ -66,8 +95,8 @@
     </div>
     <div class="jagaimo-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="163" height="135" viewBox="0 0 163 135" fill="none">
-            <path d="M73 134L1 40L50.75 20.75M50.75 20.75L100.5 1.5L73 95.5L161.5 40L50.75 20.75Z" stroke="black" />
-        </svg>
+            <path d="M73 134L1 40L50.75 20.75M50.75 20.75L100.5 1.5L73 95.5L161.5 40" stroke="black" /> 
+            </svg>
     </div>
     <div class="mimizu">
         <svg xmlns="http://www.w3.org/2000/svg" width="194" height="254" viewBox="0 0 194 254" fill="none">
