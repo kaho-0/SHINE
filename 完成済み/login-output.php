@@ -20,10 +20,10 @@ if ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 
         require 'menu.php';
     } else {
-        echo 'ログイン名またはパスワードが違います。';
+        echo 'ログインIDまたはパスワードが違います。';
     }
 } else {
-    echo 'ログイン名またはパスワードが違います。';
+    echo 'ログインIDまたはパスワードが違います。';
 }
 ?>
 <?php require 'footer.php'; ?>
