@@ -60,7 +60,7 @@ if (isset($_SESSION['client'])) {
     <div>
         <a href="rireki.php?client_id=', $row['ID'], '">注文履歴</a>
         <a href="toroku1.php">登録情報を変更する</a>
-        <form action="login-input.php" method="post">
+        <form action="logout-input.php" method="post">
             <input type="submit" value="ログアウト">
         </form>
     </div>
