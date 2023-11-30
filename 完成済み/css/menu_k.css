@@ -107,15 +107,16 @@ a.sentaku {
     margin: 5px;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
 
 body,
 h1,
 header {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
 }

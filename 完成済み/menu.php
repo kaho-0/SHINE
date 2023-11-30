@@ -11,7 +11,6 @@
                     <li><a href="skirt.php" name="cate" value="スカート" class="btn2">スカート</a></li>
                     <li><a href="onepiece.php" name="cate" value="ワンピース" class="btn2">ワンピース</a></li>
                     <li><a href="pants.php" name="cate" value="パンツ" class="btn2">パンツ</a></li>
-                    <li><a href="bag.php" name="cate" value="バッグ" class="btn2">バッグ</a></li>
                 </ul>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <?php require 'db-connect.php'; ?>
 <?php require 'header.php' ?>
-<link rel="stylesheet" href="css/menu_k.css">
+<link rel="stylesheet" href="css/menu.css">
 <div class="menu">
     <div class="main">
         <div class="sidebar">
@@ -13,7 +13,6 @@
                     <li><a href="skirt.php" name="cate" value="スカート" class="btn2">スカート</a></li>
                     <li><a href="onepiece.php" name="cate" value="ワンピース" class="btn2">ワンピース</a></li>
                     <li><a href="pants.php" name="cate" value="パンツ" class="btn2">パンツ</a></li>
-                    <li><a href="bag.php" name="cate" value="バッグ" class="btn2">バッグ</a></li>
                 </ul>
             </div>
         </div>
@@ -32,7 +31,10 @@
                     $sql = $pdo->query('select distinct S_name, img_pass from shohin where S_target="man" && S_size="S"');
                     foreach ($sql as $row) {
                         $name=$row['S_name'];
-                        echo '<a class="detail" href="detail.php?S_name=',$name,'"><img id="s_img" class="img" src="' . $row['img_pass'] . '"></a>';
+                        echo '<li>';
+                        echo '<div><a class="detail" href="detail.php?S_name=',$name,'"><img class="img" src="' . $row['img_pass'] . '"></a></div>';
+                        echo '<a class="detail" href="detail.php?S_name=',$name,'">',$row['S_name'],'</a>';
+                        echo '</li>';
                     }
                     ?>
                 </ul>

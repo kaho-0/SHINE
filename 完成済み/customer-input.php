@@ -49,7 +49,7 @@
     echo '<input id="signin-mail" type="text" required name="mail" value="',$mail,'">';
     echo '</p>';
     echo '<p>';
-    echo '<h4><label for="signin-yubin">郵便番号</label></h4>';
+    echo '<h4><label for="signin-yubin">郵便番号  ※ハイフン区切りで入力してください</label></h4>';
     echo '<input id="signin-yubin" type="text" required name="yubin" value="',$yubin,'">';
     echo '</p>';
     echo '<p>';

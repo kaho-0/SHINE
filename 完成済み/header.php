@@ -4,12 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/style.css">
-<?php
-if(isset($css) && !empty($css)){
-    echo '<link rel="stylesheet" href="./css/', $css, '">';
-}
-?>
-
     <title>SHINE</title>
 </head>
 

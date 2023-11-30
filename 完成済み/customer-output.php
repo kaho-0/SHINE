@@ -26,8 +26,8 @@
             $sql=$pdo->prepare('insert into client values(?,?,?,?,?,?,?,?)');
             $sql->execute([
                 $_POST['ID'],$_POST['PW'],
-                $_POST['name'],$_POST['BD'],$_POST['mail'],
-                $_POST['yubin'],
+                $_POST['name'],$_POST['BD'],
+                $_POST['mail'],$_POST['yubin'],
                 $_POST['address'],$_POST['tell']]);
             echo 'お客様情報を登録しました。';
             echo '<a href="login-input.php">ログイン</a>';

@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/detail.css">
 </head>
 <body>
     <div class="product-container">
@@ -17,7 +17,7 @@
             $sql->execute([$_GET['S_name']]);
         foreach($sql as $row) {
             echo '<div class="left-column">';
-                echo '<p><img class="product-image" alt="image" src="',$row['img_pass'],'"></p>';
+                echo '<img class="product-image" alt="image" src="',$row['img_pass'],'">';
             echo '</div>';
             echo '<div class="right-column">';
                 echo '<form action="cart-insert.php" method="post">';
@@ -25,35 +25,38 @@
                 echo '<p>価格：¥',number_format($row['S_price']),'</p>';
                 echo '<p>個数：<select name=count>';
                 for($i=1;$i<=10;$i++){
-                    echo '<option name="kosu" value',$i,'>',$i,'</option>';
+                    echo '<option name="kosu" value="',$i,'">',$i,'</option>';
                 }
                 echo '</select></p>';
 
                 if($row['S_color']!=null){
                     echo '<p>カラー：<select name=S_color>';
-                        echo '<option value"ブラック">ブラック</option>';
-                        echo '<option value"ホワイト">ホワイト</option>';
-                        echo '<option value"ピンク">ピンク</option>';
-                        echo '<option value"オレンジ">オレンジ</option>';
+                        echo '<option value="ブラック">ブラック</option>';
+                        echo '<option value="ホワイト">ホワイト</option>';
+                        echo '<option value="ピンク">ピンク</option>';
+                        echo '<option value="オレンジ">オレンジ</option>';
                     echo '</select></p>';
                 }
                 if($row['S_size']!=null){
                     echo '<ul class="size-inventory">';
-                    echo '<p>サイズ：<select name=S_size>';
+                    echo '<p>サイズ：<select name=S_size >';
                         echo '<option value"S">S</option>';
                         echo '<option value"M">M</option>';
                         echo '<option value"L">L</option>';
                         echo '<option value"LL">LL</option>';
+                    echo '</ul>';
                     echo '</select></p>';
                     
                 }
-            echo '<input type="hidden" name="S_ID" value="',$row['S_ID'],'">';
-            echo '<input type="hidden" name="S_name" value="',$row['S_name'],'">';
-            echo '<input type="hidden" name="S_price" value="',$row['S_price'],'">';
-            echo '<p><input type="submit" value="カートに追加"></p>';
-            echo '</form>';
-            echo '<p><a href="favorite-insert.php?id=',$row['S_ID'],'">お気に入りに追加</a></p>';
-            break;
+                echo '<input type="hidden" name="S_ID" value="',$row['S_ID'],'">';
+                echo '<input type="hidden" name="S_name" value="',$row['S_name'],'">';
+                echo '<input type="hidden" name="S_price" value="',$row['S_price'],'">';
+                echo '<p><input type="submit" value="カートに追加"></p>';
+                echo '</form>';
+                echo '<p><a href="favorite-insert.php?id=',$row['S_ID'],'">お気に入りに追加</a></p>';
+                break;
+
+            echo '</div>';
         }
     ?>
     </div>

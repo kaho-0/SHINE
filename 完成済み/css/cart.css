@@ -1,12 +1,21 @@
+header {
+    text-align: center;
+}
+
 .product-name {
     flex-grow: 1;
     margin-right: 10px;
 }
 .product-info {
+
 display: inline-block;
+
 vertical-align: top;
+
 margin-left: 20px;
+
 font-size: 24px;
+
 }
 
 hr {
@@ -34,13 +43,9 @@ margin-top: 20px;
 }
 
 table td {
-padding: 10px;
+padding: 5px;
 border: 1px solid #ddd;
 background-color: #fff;
-}
-
-#osamu {
-    width: 50px;
 }
 
 .product-info {
@@ -91,5 +96,10 @@ background-color: #0056b3;
 .center a {
     color: white; /* 文字色を白に設定 */
     text-decoration: none; /* 下線を削除する場合は必要に応じて */
-  }
-  
+}
+
+body,
+header {
+    margin: 0;
+    padding: 0;
+}

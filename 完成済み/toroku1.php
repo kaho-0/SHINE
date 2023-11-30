@@ -4,13 +4,13 @@ require 'db-connect.php';
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_SESSION['client']['ID'];
-    $stmt = $pdo->prepare("UPDATE client SET name=?, address=?, mail=?, PW=?, yubin=? WHERE ID=?");
+    $stmt = $pdo->prepare("UPDATE client SET name=?, yubin=? ,address=?, mail=?, PW=? WHERE ID=?");
     $stmt->execute([
         $_POST['name'],
+        $_POST['yubin'],
         $_POST['address'],
         $_POST['mail'],
         $_POST['PW'],
-        $_POST['yubin'],
         $user_id
     ]);
  
@@ -108,7 +108,7 @@ if (isset($_SESSION['client'])) {
             </div>
 
             <div class="form-group">
-                <label for="name">郵便番号</label>
+                <label for="yubin">郵便番号  ※ハイフン区切りで入力してください</label>
                 <input type="text" id="yubin" name="yubin" required value="<?= $yubin ?>">
             </div>
  

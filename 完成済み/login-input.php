@@ -1,88 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/login.css">
     <title>Login</title>
-    <style>
-        .error-message {
-            color: red;
-        }
-
-        #eye-icon {
-            width: 30px; 
-            height: 30px;
-            cursor: pointer;
-            position: absolute;
-            right: 20px; 
-            top: 40%; 
-            transform: translate(0, -50%);
-        }
-
-        .password-container {
-            position: relative;
-        }
-    </style>
-    <script>
-        function togglePassword() {
-            var passwordInput = document.getElementById("login-pass");
-            var eyeIcon = document.getElementById("eye-icon");
-
-            if (passwordInput.type === "password") {
-                passwordInput.type = "text";
-                eyeIcon.src = "./image/ai.png"; 
-            } else {
-                passwordInput.type = "password";
-                eyeIcon.src = "./image/eye.png";
-            }
-        }
-
-        function validateForm() {
-            var loginID = document.getElementById("login-id").value;
-            var loginPW = document.getElementById("login-pass").value;
-
-            var errorElement = document.getElementById("error-message");
-
-            errorElement.innerHTML = "";
-
-            if (loginID === "" && loginPW === "") {
-                errorElement.innerHTML = "ログインIDとパスワードを入力してください。";
-                return false; 
-            }
-
-            if (loginID === "") {
-                errorElement.innerHTML = "ログインIDを入力してください。";
-                return false;
-            }
-
-            if (loginPW === "") {
-                errorElement.innerHTML = "パスワードを入力してください。";
-                return false; 
-            }
-            return true;
-        }
-    </script>
 </head>
-
 <body>
     <div class="signin">
-        <h1>SHINE</h1>
-        <form action="login-output.php" method="POST" onsubmit="return validateForm();">
+    <h1>SHINE</h1>
+        <form action="login-output.php" method="POST">
             <class id="LOGIN-ID">
                 <span><label for="loginid" id="loginid">login ID</label></span><br>
                 <input id="login-id" name="ID" type="text" placeholder="IDを入力"><br>
             </class>
             <class id="LOGIN-PASS">
                 <label for="loginpass" id="loginpass">password</label><br>
-                <div class="password-container">
-                    <input id="login-pass" name="PW" type="password" placeholder="パスワードを入力">
-                    <img id="eye-icon" src="./image/ai.png" onclick="togglePassword()" alt="eye-icon" style="cursor: pointer;">
-                </div>
+                <input id="login-pass" name="PW" type="text"  placeholder="パスワードを入力">
             </class>
             <p><button id="login-button" type="submit">ログイン</button></p>
-            <p class="error-message" id="error-message"></p>
             <a href="customer-input.php">新規会員登録</a><br>
         </form>
     </div>
@@ -95,8 +33,8 @@
     </div>
     <div class="jagaimo-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="163" height="135" viewBox="0 0 163 135" fill="none">
-            <path d="M73 134L1 40L50.75 20.75M50.75 20.75L100.5 1.5L73 95.5L161.5 40" stroke="black" /> 
-            </svg>
+            <path d="M73 134L1 40L50.75 20.75M50.75 20.75L100.5 1.5L73 95.5L161.5 40L50.75 20.75Z" stroke="black" />
+        </svg>
     </div>
     <div class="mimizu">
         <svg xmlns="http://www.w3.org/2000/svg" width="194" height="254" viewBox="0 0 194 254" fill="none">

@@ -7,7 +7,7 @@
         try{
             $sql=$pdo->prepare('insert into favorites values(?,?)');
             $sql->execute([$_SESSION['client']['ID'],$_GET['id']]);
-            echo '<font size="5px">お気に入りに商品を追加しました。</font>';
+            echo 'お気に入りに商品を追加しました。';
             echo '<hr>';
             require 'favorite.php';
         }catch(PDOException $e){

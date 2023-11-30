@@ -1,9 +1,19 @@
 <?php
 session_start();
-$css = 'style3.css';
 require 'header.php';
 require 'db-connect.php';
 
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./css/style3.css">
+<title>登録情報</title>
+</head>
+<body>
+
+<?php
 if (isset($_SESSION['client'])) {
     $client_id = $_SESSION['client']['ID'];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,7 +32,8 @@ if (isset($_SESSION['client'])) {
     $sql->execute([$client_id]);
     if ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
         echo '
-<h1>', $row['name'], '様の登録情報</h1>
+
+<h1 font-size: 15px;>', $row['name'], '様の登録情報</h1>
 <div class="container">
 
     <div class="info-section">
@@ -53,7 +64,7 @@ if (isset($_SESSION['client'])) {
     <div>
         <a href="rireki.php?client_id=', $row['ID'], '">注文履歴</a>
         <a href="toroku1.php">登録情報を変更する</a>
-        <form action="logout-input.php" method="post">
+        <form action="login-input.php" method="post">
             <input type="submit" value="ログアウト">
         </form>
     </div>
@@ -63,6 +74,9 @@ if (isset($_SESSION['client'])) {
         echo 'ユーザーの情報が見つかりませんでした。';
     }
 } else {
+
+    echo '<h1 font-size: 15px;>登録情報</h1>';
     echo 'ユーザーはログインしていません。情報を表示するにはログインしてください。';
+    echo '<a href="login-input.php">ログインはこちら</a>';
 }
 ?>
