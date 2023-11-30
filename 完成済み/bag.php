@@ -29,7 +29,7 @@
                 <div class="shohin-category-img">
                     <?php
                     $pdo = new PDO($connect, USER, PASS);
-                    $sql = $pdo->query('select distinct S_name, img_pass from shohin where S_cate="バッグ" && S_size="S"');
+                    $sql = $pdo->query('select distinct S_name, img_pass from shohin where S_cate="バッグ"');
                     foreach ($sql as $row) {
                         $name=$row['S_name'];
                         echo '<a class="detail" href="detail.php?S_name=',$name,'"><img id="s_img" class="img" src="' . $row['img_pass'] . '"></a>';
