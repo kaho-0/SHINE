@@ -1,3 +1,5 @@
+<?php require 'db-connect.php'; ?>
+<?php require 'header.php' ?>
 <link rel="stylesheet" href="css/menu_k.css">
 <div class="menu">
     <div class="main">
@@ -18,7 +20,7 @@
         <div class="main-contents">
             <div class="menu-ber">
                 <div class="menu-link">
-                    <a href="index.php" class="sentaku">全て</a>
+                <a href="index.php" class="sentaku">全て</a>
                     <a href="mens.php" class="sentaku">メンズ</a>
                     <a href="womans.php" class="sentaku">レディース</a>
                 </div>
@@ -27,25 +29,10 @@
                 <div class="shohin-category-img">
                     <?php
                     $pdo = new PDO($connect, USER, PASS);
-                    if (isset($_POST['kensaku'])) {
-                        $sql = $pdo->prepare('select distinct S_name, img_pass from shohin where S_name like ?');
-                        $sql->execute(['%' . $_POST['kensaku'] . '%']);
-                        $data = $sql->fetchAll();
-                        if (empty($data)) {
-                            echo 'データが1件もありません';
-                        } else {
-                            foreach ($data as $row) {
-                                $name=$row['S_name'];
-                                echo '<img id="s_img" class="img" src="' . $row['img_pass'] . '">';
-                                echo '<a class="detail" href="detail.php?S_name=',$name,'">',$row['S_name'],'</a>';
-                            }
-                        }
-                    } else {
-                        $sql = $pdo->query('select distinct S_name, img_pass from shohin');
-                        foreach ($sql as $row) {
-                            $name=$row['S_name'];
-                            echo '<a class="detail" href="detail.php?S_name=',$name,'"><img id="s_img" class="img" src="' . $row['img_pass'] . '"></a>';
-                        }
+                    $sql = $pdo->query('select distinct S_name, img_pass from shohin where S_cate="バッグ" && S_size="S"');
+                    foreach ($sql as $row) {
+                        $name=$row['S_name'];
+                        echo '<a class="detail" href="detail.php?S_name=',$name,'"><img id="s_img" class="img" src="' . $row['img_pass'] . '"></a>';
                     }
                     ?>
                 </div>
