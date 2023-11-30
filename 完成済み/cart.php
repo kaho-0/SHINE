@@ -60,3 +60,4 @@ if(isset($_SESSION['client'])){
     echo 'カートを表示するには、ログインしてください。';
     echo '<a href="login-input.php">ログイン</a>';
 }
+
