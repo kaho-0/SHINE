@@ -20,7 +20,7 @@ if(isset($_SESSION['client'])){
             $id=$row['S_ID'];
             $name=$row['S_name'];
             echo '<tr>';
-            echo '<td id = "osamu"><img alt="image" src="',$row['img_pass'],'" width="300" height="300"></td>';
+            echo '<td><img alt="image" src="',$row['img_pass'],'" width="300" height="300"></td>';
             echo '<td>';
             echo '<div class="product-info">';
             echo '<p class="product-name"><a href="detail.php?S_name='.$name.'">',$row['S_name'],'</a></p>';
@@ -57,7 +57,6 @@ if(isset($_SESSION['client'])){
     }
 
 }else{
-    echo 'カートを表示するには、ログインしてください。';
-    echo '<a href="login-input.php">ログイン</a>';
+    echo 'カートを表示するには、ログインしてください。<br>';
+    echo '<a href="login-input.php">ログインはこちら</a>';
 }
-
