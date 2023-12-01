@@ -38,8 +38,8 @@
 
         echo '<hr>';
         echo '<p class="syori">お支払方法</p>';
-        echo '<p class="syori"><input type="radio" name="way" value="credit" class="syori">クレジットカード　';
-        echo '<input type="radio" name="way" value="cash">代金引換</p>';
+        echo '<p class="syori"><input type="radio" name="way" required value="credit" class="syori">クレジットカード　';
+        echo '<input type="radio" name="way" value="cash" checked>代金引換</p>';
         echo '<hr>';
         if(isset($_SESSION['client'])){
             
