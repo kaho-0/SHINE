@@ -1,6 +1,6 @@
 <?php require 'db-connect.php'; ?>
 <?php require 'header.php' ?>
-<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/menu_k.css">
 <div class="menu">
     <div class="main">
         <div class="sidebar">
@@ -31,7 +31,9 @@
                     $sql = $pdo->query('select distinct S_name, img_pass from shohin where S_cate="スカート" && S_size="S"');
                     foreach ($sql as $row) {
                         $name=$row['S_name'];
+                        echo '<li>';
                         echo '<a class="detail" href="detail.php?S_name=',$name,'"><img id="s_img" class="img" src="' . $row['img_pass'] . '"></a>';
+                        echo '</li>';
                     }
                     ?>
                 </div>
