@@ -9,8 +9,8 @@
 </head>
 <body>
     <h1>SHINE</h1>
-    <div class='message'>ARIGATOU!!</div>;
-    <br>;
+    <div class='message'>ARIGATOU!!</div>
+    <br>
     <?php
 
         if (isset($_SESSION['client'])) {
@@ -18,10 +18,10 @@
             echo '<h2>', $userName, '様、ご注文の受付が完了しました</h2>';
         }
         ?>
-    この度はSHINEでのお買い物ありがとうございます。<br>,
-    ご注文情報をお送りしますので、下記内容にてご確認ください。<br>,
-    発送手続き完了後、お知らせメールを再度配信いたしますので、<br>,
-    発送完了までもうしばらくお待ちください。<br>;
+    この度はSHINEでのお買い物ありがとうございます。<br>
+    ご注文情報をお送りしますので、下記内容にてご確認ください。<br>
+    発送手続き完了後、お知らせメールを再度配信いたしますので、<br>
+    発送完了までもうしばらくお待ちください。<br>
     <form action="index.php" method="post">
     <p><button type="submit">戻る</button></p>
     </form>
