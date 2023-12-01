@@ -82,15 +82,17 @@ width: 200px;
 height: 50px;
 display: block;
 margin: 20px auto;
-background-color: #007bff;
-color: #fff;
 border: none;
 padding: 10px 20px;
 cursor: pointer;
+color: #000;
+border: 2px solid #000;
+background: #fff;
+font-weight: bold;
 }
 
 .center:hover {
-background-color: #0056b3;
+background-color: #b8b8b8;
 }
 
 .center a {
