@@ -46,7 +46,7 @@ if(isset($_SESSION['client'])){
         echo '</table>';
         echo '<div style="text-align: right;">';
         echo '<h1>合計金額：¥',number_format($total),'</h1>';
-        echo '15,000円以上で送料無料!!!!!!!!';
+        echo '<h2>15,000円以上で送料無料!!!!!!!!</h2>';
         echo '</div>';
         echo '<form action="syori.php" method="post">';
         echo '<input type="hidden" name="total" value="' . $total . '">';
