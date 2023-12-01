@@ -34,6 +34,7 @@ if (isset($_GET['client_id'])) {
             echo '<p>商品名: ' . $item['S_name'] . '</p>';
             echo '<p>カラー： ' . $item['S_color'] . '</p>';
             echo '<p>サイズ： ' . $item['S_size'] . '</p>';
+            echo '<p>ご購入日時：'. $item['date'] . '</p>';
             echo '<p>￥' . $item['S_price'] . '<span style="margin-right: 150px;"></span>数量：' . $item['kosu'] . '</p>';
             echo '</div>';
             echo '<hr>';
