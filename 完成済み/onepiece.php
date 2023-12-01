@@ -32,9 +32,7 @@
                     
                     foreach ($sql as $row) {
                         $name=$row['S_name'];
-                        echo '<li>';
                         echo '<a class="detail" href="detail.php?S_name=',$name,'"><img id="s_img" class="img" src="' . $row['img_pass'] . '"></a>';
-                        echo '</li>';
                     }
                     ?>
                 </div>
