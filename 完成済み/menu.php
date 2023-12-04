@@ -32,7 +32,7 @@
                         $sql->execute(['%' . $_POST['kensaku'] . '%']);
                         $data = $sql->fetchAll();
                         if (empty($data)) {
-                            echo 'データが1件もありません';
+                            echo '<font size="7">データが1件もありません</font>';
                         } else {
                             foreach ($data as $row) {
                                 $name=$row['S_name'];
