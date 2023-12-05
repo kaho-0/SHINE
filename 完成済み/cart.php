@@ -36,10 +36,10 @@ if(isset($_SESSION['client'])){
             $subtotal=$row['kosu']*$row['S_price'];
             $total+=$subtotal;
             echo '<td>';
-            echo '<p class="product-info"> 小計</p>';
+            echo '<p> 小計</p>';
             echo '<p>¥',number_format($subtotal),'</p>';
             echo '</td>';
-            echo '<td class="product-info"><a href="cart-delete.php?id=',$id,'">削除</a></td>';
+            echo '<td><a href="cart-delete.php?id=',$id,'">削除</a></td>';
             echo '<tr>';
             echo '<tr><td colspan="6"><hr></td></tr>';
         }
