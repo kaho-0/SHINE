@@ -21,7 +21,7 @@ if(isset($_SESSION['client'])){
         echo '<p class="product-name"><a href="detail.php?S_name='.$name.'">',$row['S_name'],'</a></p>';
         echo '<p>価格：¥',number_format($row['S_price']),'</p>';
         echo '</td>';
-        echo '<td><a href="favorite-delete.php?id=',$id,'">削除</a></td>';
+        echo '<td><a href="favorite-delete.php?id=',$id,'" style="font-size: 25px;">削除</a></td>';
         echo '<tr>';
         echo '<tr><td colspan="6"><hr></td></tr>';
     }
