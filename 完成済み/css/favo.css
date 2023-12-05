@@ -51,6 +51,10 @@ border: 1px solid #ddd;
 background-color: #fff;
 }
 
+#osamu {
+    width: 50px;
+}
+
 .product-info {
 display: flex;
 flex-direction: column;
